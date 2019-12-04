@@ -9,3 +9,5 @@ class Node {
     left?: Node
     right?: Node
 }
+
+export default Node
