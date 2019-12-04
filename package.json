@@ -1,16 +1,19 @@
 {
-  "name": "daily_coding_problems",
-  "version": "1.0.0",
-  "description": "A repository for my daily coding problems",
-  "main": "index.js",
-  "author": "Josh Reep",
-  "license": "MIT",
-  "private": true,
-  "devDependencies": {
-    "@types/jest": "^24.0.23",
-    "@types/node": "^12.12.14",
-    "jest": "^24.9.0",
-    "ts-jest": "^24.2.0",
-    "typescript": "^3.7.2"
-  }
+    "name": "daily_coding_problems",
+    "version": "1.0.0",
+    "description": "A repository for my daily coding problems",
+    "main": "index.js",
+    "author": "Josh Reep",
+    "license": "MIT",
+    "private": true,
+    "devDependencies": {
+        "@types/jest": "^24.0.23",
+        "@types/node": "^12.12.14",
+        "jest": "^24.9.0",
+        "ts-jest": "^24.2.0",
+        "typescript": "^3.7.2"
+    },
+    "scripts": {
+        "test": "jest"
+    }
 }
