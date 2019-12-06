@@ -14,6 +14,6 @@ describe('serializer', () => {
     })
 
     it('should serialize and de-serialize a Node there and back again', () => {
-        expect(deSerialize(serialize(node)).left.left.val).toBe('left.left')
+        expect(deSerialize(serialize(node))?.left?.left?.val).toBe('left.left')
     })
 })
