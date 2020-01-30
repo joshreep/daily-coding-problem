@@ -1,8 +1,6 @@
 import Node from './Node'
 
 export const serialize = (root: Node): string => {
-    if (!root) throw new Error('No root Node provided')
-
     const renderSide = (side: 'left' | 'right') => {
         const sideNode = root[side]
 
