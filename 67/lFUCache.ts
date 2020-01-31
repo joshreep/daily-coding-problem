@@ -38,7 +38,7 @@ class lFUCache {
         const sortedEntries = Object.entries(this.cache).sort((a, b) => {
             const usageComparison = a[1].usageCount - b[1].usageCount
 
-            if (usageComparison === 0) return a[1].lastUsed.getTime() - a[1].lastUsed.getTime()
+            if (usageComparison === 0) return a[1].lastUsed.getTime() - b[1].lastUsed.getTime()
 
             return usageComparison
         })
