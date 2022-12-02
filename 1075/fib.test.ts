@@ -28,4 +28,7 @@ test('should should return the proper number in the Fibonacci sequence', () => {
     expect(fib(60)).toBe(1548008755920)
     expect(fib(70)).toBe(190392490709135)
     // after 70 we get into big int territory and we start to see the effects of the inaccuracy of Javascript
+    // to be accurate after this point we need to accept a time complexity of O(n) instead of O(1) up until this point
+    expect(fib(80)).toBe(23416728348467685)
+    expect(fib(90)).toBe(2880067194370816120)
 })
