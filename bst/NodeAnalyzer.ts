@@ -22,7 +22,7 @@ export default class NodeAnalyzer<T> {
     }
 
     static hasChildren<T>(node: TreeNode<T>): boolean {
-        return !!node.left && !!node.right
+        return !!node.left || !!node.right
     }
 
     static getChildren<T>(node: TreeNode<T>): TreeNode<T>[] {

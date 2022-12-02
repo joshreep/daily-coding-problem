@@ -17,8 +17,10 @@ export default class TreeNode<T> {
         return this._left
     }
 
-    set left(value: TreeNode<T> | undefined) {
-        if (this._left) this._throwValueAlreadySetError('left')
+    /**
+     * This method is private.  Please use the static insert method instead
+     */
+    private set left(value: TreeNode<T> | undefined) {
         this._left = value
     }
 
@@ -26,12 +28,24 @@ export default class TreeNode<T> {
         return this._right
     }
 
-    set right(value: TreeNode<T> | undefined) {
-        if (this._right) this._throwValueAlreadySetError('right')
+    /**
+     * This method is private.  Please use the static insert method instead
+     */
+    private set right(value: TreeNode<T> | undefined) {
         this._right = value
     }
 
-    private _throwValueAlreadySetError(side: 'left' | 'right') {
-        throw new Error(`A value has already been set for the ${side} side of this Node.`)
+    static insert<T>(value: T, node?: TreeNode<T>): TreeNode<T> {
+        if (!node) {
+            return new TreeNode(value)
+        }
+
+        if (value <= node.value) {
+            node.left = TreeNode.insert(value, node.left)
+        } else {
+            node.right = TreeNode.insert(value, node.right)
+        }
+
+        return node
     }
 }
