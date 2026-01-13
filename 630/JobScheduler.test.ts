@@ -1,9 +1,11 @@
+import { vi } from 'vitest'
+
 import JobScheduler from './JobScheduler'
 
 describe('JobScheduler', () => {
-    test('schedules a job', (done) => {
+    test('schedules a job', () => new Promise<void>((done) => {
         const scheduler = new JobScheduler()
-        const f = jest.fn()
+        const f = vi.fn()
         const n = 50
 
         scheduler.scheduleJob(f, n)
@@ -13,11 +15,11 @@ describe('JobScheduler', () => {
             expect(f).toHaveBeenCalledTimes(1)
             done()
         }, n)
-    })
+    }))
 
-    test('clears all pending jobs', (done) => {
+    test('clears all pending jobs', () => new Promise<void>((done) => {
         const scheduler = new JobScheduler()
-        const jobs = [jest.fn(), jest.fn(), jest.fn()]
+        const jobs = [vi.fn(), vi.fn(), vi.fn()]
         jobs.forEach((f, i) => scheduler.scheduleJob(f, i * 20))
 
         scheduler.clearAllJobs()
@@ -29,12 +31,12 @@ describe('JobScheduler', () => {
         )
 
         done()
-    })
+    }))
 
-    test('clears 1 pending job', (done) => {
+    test('clears 1 pending job', () => new Promise<void>((done) => {
         const scheduler = new JobScheduler()
-        const job1 = jest.fn()
-        const job2 = jest.fn()
+        const job1 = vi.fn()
+        const job2 = vi.fn()
 
         const job1Id = scheduler.scheduleJob(job1, 50)
         scheduler.scheduleJob(job2, 50)
@@ -46,5 +48,5 @@ describe('JobScheduler', () => {
             expect(job2).toHaveBeenCalled()
             done()
         }, 50)
-    })
+    }))
 })
