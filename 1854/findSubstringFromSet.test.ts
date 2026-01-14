@@ -10,11 +10,6 @@ const tests = [
 
 ]
 
-// test('should work', () => {
-//     const {string, set, expected} = tests[0]
-//     expect(findSubstringFromSet(string, set)).toBe(expected)
-// })
-
 test.each(tests)(
     'should return substring $expected, when given $string, and set $set', 
     ({string, set, expected}) => {
