@@ -1,5 +1,5 @@
+import TreeNode from '../../support/bst/TreeNode'
 import findDeepestNodes from './findDeepestNode'
-import TreeNode from '../bst/TreeNode'
 
 test('should find the deepest node', () => {
     const nodeC = new TreeNode('c')
