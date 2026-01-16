@@ -5,8 +5,9 @@ const config: Config = {
   tabWidth: 2,
   semi: false,
   singleQuote: true,
-  printWidth: 120,
   arrowParens: 'always',
+  quoteProps: 'consistent',
+  printWidth: 80,
 }
 
 export default config
