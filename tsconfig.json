@@ -1,15 +1,19 @@
 {
-    "compilerOptions": {
-        "target": "es2020",
-        "module": "commonjs",
-        "lib": ["ESNext"],
-        "strict": true,
-        "declaration": true,
-        "outDir": "dist",
-        "sourceMap": true,
-        "esModuleInterop": true,
-        "downlevelIteration": true,
-        "types": ["vitest/globals"]
-    },
-    "exclude": ["node_modules", "**/*.test.ts"]
+  "compilerOptions": {
+    "target": "es2020",
+    "module": "commonjs",
+    "lib": ["ESNext"],
+    "strict": true,
+    "declaration": true,
+    "outDir": "dist",
+    "sourceMap": true,
+    "esModuleInterop": true,
+    "downlevelIteration": true,
+    "types": ["vitest/globals"],
+    "baseUrl": "./",
+    "paths": {
+      "@/*": ["./*"]
+    }
+  },
+  "exclude": ["node_modules", "**/*.test.ts"]
 }
